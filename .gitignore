@@ -1,167 +1,103 @@
-# ---------------------------------------------------------
-# UNITY .gitignore – Updated & Cleaned (2025)
-# Colócalo en la raíz del proyecto.
-# Basado en: https://github.com/github/gitignore/blob/main/Unity.gitignore
-# ---------------------------------------------------------
+# =========================================================
+# UNITY (Cliente HIVE)
+# Proyecto Unity dentro de /Hive
+# =========================================================
 
-# Archivos temporales
-.utmp/
+/Hive/[Ll]ibrary/
+/Hive/[Tt]emp/
+/Hive/[Oo]bj/
+/Hive/[Bb]uild/
+/Hive/[Bb]uilds/
+/Hive/[Ll]ogs/
+/Hive/[Uu]ser[Ss]ettings/
 
-# Carpetas generadas por Unity
-/[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Uu]ser[Ss]ettings/
+/Hive/[Mm]emoryCaptures/
+/Hive/[Rr]ecordings/
+
+# Cache interno de Unity
+/Hive/[Ll]ibrary/ShaderCache/
+/Hive/[Ll]ibrary/Artifacts/
+/Hive/[Ll]ibrary/Il2cppBuildCache/
+/Hive/[Ll]ibrary/PlayerDataCache/
+/Hive/[Ll]ibrary/Bee/
 
 # Logs
 *.log
+mono_crash.*
+sysinfo.txt
 
-# Blender autosave
-*.blend1
-*.blend1.meta
-
-# Memory Captures
-[Mm]emoryCaptures/
-
-# Grabaciones del Editor
-[Rr]ecordings/
-
-# JetBrains Rider
-[Aa]ssets/Plugins/Editor/JetBrains*
-*.DotSettings.user
-
-# VS / Visual Studio
+# IDEs
 .vs/
 .gradle/
-
-# Archivos de proyectos generados por IDEs
-ExportedObj/
-.consulo/
 *.csproj
-*.unityproj
 *.sln
+*.unityproj
 *.suo
 *.tmp
 *.user
 *.userprefs
 *.pidb
-*.booproj
-*.svd
-*.pdb
-*.mdb
 *.opendb
 *.VC.db
 
-# Metadatos generados automáticamente
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
+# JetBrains Rider
+/Hive/Assets/Plugins/Editor/JetBrains*
+*.DotSettings.user
 
-# Informes de fallos
-sysinfo.txt
-mono_crash.*
+# Blender autosave
+*.blend1
 
 # Builds
 *.apk
 *.aab
-*.unitypackage
-*.unitypackage.meta
 *.app
+*.unitypackage
 
-# Crashlytics
-crashlytics-build.properties
+# Addressables (datos generados)
+/Hive/ServerData/
+/Hive/Assets/StreamingAssets/aa*
+/Hive/Assets/AddressableAssetsData/link.xml*
+/Hive/Assets/Addressables_Temp*
+/Hive/Assets/AddressableAssetsData/*/*.bin*
 
-# Archivos generados por pruebas automáticas
-InitTestScene*.unity*
+# Visual Scripting generado
+/Hive/Assets/Unity.VisualScripting.Generated/
 
-# ---------------------------------------------------------
-# ADDRESSABLES (Ignorar datos generados)
-# ---------------------------------------------------------
-ServerData
-[Aa]ssets/StreamingAssets/aa*
-[Aa]ssets/AddressableAssetsData/link.xml*
-[Aa]ssets/Addressables_Temp*
-[Aa]ssets/AddressableAssetsData/*/*.bin*
-
-# ---------------------------------------------------------
-# UNITY VISUAL SCRIPTING
-# ---------------------------------------------------------
-[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
-[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
-[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
-[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
-
-# ---------------------------------------------------------
-# ARCHIVOS AUTO-GENERADOS POR UNITY PLAY TESTS
-# ---------------------------------------------------------
-[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity
-
-# ---------------------------------------------------------
-# UNITY PACKAGE CACHE
-# ---------------------------------------------------------
-[Pp]ackageCache/
-[Pp]ackages/com.unity.*.tmp
-
-# ---------------------------------------------------------
-# LOCAL SETTINGS DEL USUARIO (NO COMPARTIBLES)
-# ---------------------------------------------------------
-ProjectSettings/Packages/dev/
-ProjectSettings/EditorSettings.asset
-ProjectSettings/Layouts/
-ProjectSettings/AnalyticsSettings.asset
-
-# ---------------------------------------------------------
-# CACHE DE GIROSCOPE, SHADERS & LIGHTMAPPING
-# ---------------------------------------------------------
-Assets/Plugins/Android/*/gradle/**
-[Ll]ibrary/ShaderCache/
-[Ll]ibrary/Artifacts/
-[Ll]ibrary/Il2cppBuildCache/
-[Ll]ibrary/PlayerDataCache/
-[Ll]ibrary/Bee/
-
-# ---------------------------------------------------------
+# =========================================================
 # NODE.JS (Servidor HIVE)
-# ---------------------------------------------------------
+# Carpeta recomendada: /hive-server
+# =========================================================
 
-# Dependencias
-node_modules/
+/hive-server/node_modules/
+/hive-server/dist/
+/hive-server/build/
 
-# Logs
+# Logs Node
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 
-# Archivos de entorno
-.env
-.env.*
-!.env.example
+# Entornos
+/hive-server/.env
+/hive-server/.env.*
+!/hive-server/.env.example
 
-# Cache de gestores de paquetes
+# Cache gestores
 .npm/
-.pnpm-store/
 .yarn/
+.pnpm-store/
 
-# Coverage / tests
+# Coverage
 coverage/
 
-# Builds / dist
-dist/
-build/
-
-# PM2 / procesos
-.pids
+# PM2
 *.pid
 *.seed
 *.pid.lock
 
-# ---------------------------------------------------------
-# OTROS ARCHIVOS A IGNORAR
-# ---------------------------------------------------------
+# =========================================================
+# SISTEMA
+# =========================================================
+
 .DS_Store
 Thumbs.db
-
