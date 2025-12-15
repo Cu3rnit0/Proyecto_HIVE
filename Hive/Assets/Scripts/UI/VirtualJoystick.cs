@@ -43,3 +43,4 @@ public class VirtualJoystick : MonoBehaviour,
         input = Vector2.zero;
     }
 }
+        
