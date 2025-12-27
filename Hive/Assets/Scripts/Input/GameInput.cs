@@ -4,16 +4,28 @@ public class GameInput : MonoBehaviour
 {
     public static GameInput Instance;
 
-    [Header("Mobile")]
+    [Header("Mobile (Opcional)")]
     public VirtualJoystick moveJoystick;
     public LookInput lookInput;
 
+    private float lookX;
+    private float lookY;
+
     void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
+        if (Instance != null && Instance != this)
+        {
             Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject); //Importante para cambios de escena
+    }
+
+    void Update()
+    {
+        ReadLookInput();
     }
 
     // =========================
@@ -42,23 +54,23 @@ public class GameInput : MonoBehaviour
     // =========================
     // MIRAR (CÁMARA)
     // =========================
-    public float LookX
-    {
-        get
-        {
-            float mouse = Input.GetAxis("Mouse X");
-            float touch = lookInput != null ? lookInput.LookDelta.x : 0f;
-            return mouse + touch;
-        }
-    }
+    public float LookX => lookX;
+    public float LookY => lookY;
 
-    public float LookY
+    private void ReadLookInput()
     {
-        get
-        {
-            float mouse = Input.GetAxis("Mouse Y");
-            float touch = lookInput != null ? lookInput.LookDelta.y : 0f;
-            return mouse + touch;
-        }
+        float mouseX = 0f;
+        float mouseY = 0f;
+
+#if UNITY_STANDALONE || UNITY_EDITOR
+        mouseX = Input.GetAxis("Mouse X");
+        mouseY = Input.GetAxis("Mouse Y");
+#endif
+
+        float touchX = lookInput != null ? lookInput.LookDelta.x : 0f;
+        float touchY = lookInput != null ? lookInput.LookDelta.y : 0f;
+
+        lookX = mouseX + touchX;
+        lookY = mouseY + touchY;
     }
 }

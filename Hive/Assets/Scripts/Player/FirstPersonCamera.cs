@@ -9,6 +9,9 @@ public class FirstPersonCamera : MonoBehaviour
 
     void Update()
     {
+        if (GameInput.Instance == null)
+            return;
+
         float lookX = GameInput.Instance.LookX * sensitivity;
         float lookY = GameInput.Instance.LookY * sensitivity;
 
@@ -18,4 +21,5 @@ public class FirstPersonCamera : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * lookX);
     }
+
 }
