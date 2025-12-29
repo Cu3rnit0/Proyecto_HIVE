@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 959103395054508414}
   - component: {fileID: 6923044933045885870}
   - component: {fileID: 4046024504914882570}
+  - component: {fileID: 3492609272592755662}
   m_Layer: 0
   m_Name: PlayerAvatar
   m_TagString: Untagged
@@ -31,9 +32,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5166298156120950683}
   - {fileID: 1543155888920065714}
   - {fileID: 186099968650272562}
-  - {fileID: 5166298156120950683}
   - {fileID: 3500014861638196120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -511,6 +512,35 @@ MonoBehaviour:
     _eyesForwardOffset: 0.1
   _useLegIK: 1
   _listControllerEvents: []
+--- !u!114 &3492609272592755662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166566931484790373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b87341763ed1447b56652023d58f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UltimateXR::UltimateXR.Locomotion.UxrSmoothLocomotion
+  _parentToDestination: 0
+  _metersPerSecondNormal: 3.5
+  _metersPerSecondSprint: 6
+  _walkDirection: 0
+  _rotationDegreesPerSecondNormal: 120
+  _rotationDegreesPerSecondSprint: 120
+  _gravity: -9.81
+  _sprintButtonHand: 0
+  _sprintButton: 1
+  _triggerCollidersInteraction: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _capsuleRadius: 0.25
+  _maxStepHeight: 0.2
+  _maxSlopeDegrees: 35
+  _stepDistanceCheck: 0.2
 --- !u!1 &5201704894600429829
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +569,7 @@ Transform:
   m_GameObject: {fileID: 5201704894600429829}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
